@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view />
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
@@ -10,10 +10,9 @@ import { defineComponent } from '@vue/composition-api';
 import FooterComponent from '@/components/Footer.vue';
 
 export default defineComponent({
-
   components: {
-    Footer: FooterComponent
-  }
+    Footer: FooterComponent,
+  },
 });
 </script>
 

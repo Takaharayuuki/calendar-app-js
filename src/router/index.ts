@@ -51,11 +51,11 @@ const router = new VueRouter({
 });
 
 router.afterEach(to => {
-  if(!to.meta.title) {
+  if (!to.meta.title) {
     return;
   }
 
   document.title = to.meta.title;
-})
+});
 
 export default router;
