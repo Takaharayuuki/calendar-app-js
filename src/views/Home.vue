@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-left">
     <p>ホーム画面</p>
     <p><router-link to="sign-in">サインイン</router-link></p>
     <p><button @click="calendar">カレンダー</button></p>
