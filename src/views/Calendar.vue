@@ -14,11 +14,9 @@ export default defineComponent({
       validator: (value: string) => {
         return ['month', 'week', 'day'].includes(value);
       },
-    }
-  }
-})
+    },
+  },
+});
 </script>
 
-<style>
-
-</style>
+<style></style>
