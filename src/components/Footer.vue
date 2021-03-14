@@ -46,8 +46,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRef, toRefs } from '@vue/composition-api';
-import { profileMockData } from '@/store/profile';
+import { defineComponent, reactive, toRef, toRefs, computed } from '@vue/composition-api';
+import { profileStore } from '@/store/profile';
 
 export default defineComponent({
   setup(prop, context) {
@@ -62,7 +62,9 @@ export default defineComponent({
         { title: '共有する', icon: 'share', methodName: 'share'},
       ],
       // サインインしているユーザー
-      signInUser: profileMockData,
+      signInUser: computed(() => {
+        return profileStore.profile;
+      })
     });
     /**
      * メソッド名を指定してコンポーネントのメソッドを呼び出します。
@@ -96,7 +98,8 @@ export default defineComponent({
      * サインアウトします。
      */
     const signOut = () => {
-      routerPush('/sign-in')
+      profileStore.profile = null;
+      routerPush('/sign-in');
     };
 
      return {
